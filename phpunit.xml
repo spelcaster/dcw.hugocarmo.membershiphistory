@@ -1,0 +1,14 @@
+<phpunit bootstrap="vendor/autoload.php">
+    <testsuites>
+        <testsuite name="webpage">
+            <directory>tests/CRM/Membershiphistory/Page</directory>
+        </testsuite>
+        <testsuite name="database">
+            <file>tests/CRM/Membershiphistory/UpgraderTest.php</file>
+            <directory>tests/CRM/Membershiphistory/Upgrader</directory>
+        </testsuite>
+    </testsuites>
+    <listeners>
+        <listener class="JohnKary\PHPUnit\Listener\SpeedTrapListener" />
+    </listeners>
+</phpunit>
