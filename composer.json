@@ -1,0 +1,12 @@
+{
+    "name": "hugocarmo/dcw.hugocarmo.membershiphistory",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Hugo do Carmo",
+            "email": "hugrito.kun@gmail.com"
+        }
+    ],
+    "require": {}
+}
