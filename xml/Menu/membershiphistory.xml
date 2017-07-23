@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<menu>
-  <item>
-    <path>civicrm/dcw/membership-history</path>
-    <page_callback>CRM_Membershiphistory_Page_MembershipHistory</page_callback>
-    <title>MembershipHistory</title>
-    <access_arguments>access CiviCRM</access_arguments>
-  </item>
-</menu>
