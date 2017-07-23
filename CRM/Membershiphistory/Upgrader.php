@@ -10,9 +10,9 @@ class CRM_Membershiphistory_Upgrader extends CRM_Membershiphistory_Upgrader_Base
 
   /**
    * Example: Run an external SQL script when the module is installed.
-   *
+   */
   public function install() {
-    $this->executeSqlFile('sql/myinstall.sql');
+    $this->executeSqlFile('sql/install.sql');
   }
 
   /**
@@ -35,9 +35,9 @@ class CRM_Membershiphistory_Upgrader extends CRM_Membershiphistory_Upgrader_Base
 
   /**
    * Example: Run an external SQL script when the module is uninstalled.
-   *
+   */
   public function uninstall() {
-   $this->executeSqlFile('sql/myuninstall.sql');
+    $this->executeSqlFile('sql/uninstall.sql');
   }
 
   /**
