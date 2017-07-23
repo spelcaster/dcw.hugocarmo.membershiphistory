@@ -1,17 +1,17 @@
 <?xml version="1.0"?>
 <extension key="dcw.hugocarmo.membershiphistory" type="module">
   <file>membershiphistory</file>
-  <name>FIXME</name>
-  <description>FIXME</description>
+  <name>CiviCRM Membership History</name>
+  <description>This extension creates a history for membership periods</description>
   <license>MIT</license>
   <maintainer>
     <author>Hugo do Carmo</author>
     <email>hugrito.kun@gmail.com</email>
   </maintainer>
   <urls>
-    <url desc="Main Extension Page">http://FIXME</url>
-    <url desc="Documentation">http://FIXME</url>
-    <url desc="Support">http://FIXME</url>
+    <url desc="Main Extension Page">https://github.com/spelcaster/dcw.hugocarmo.membershiphistory</url>
+    <url desc="Documentation">https://github.com/spelcaster/dcw.hugocarmo.membershiphistory</url>
+    <url desc="Support">https://github.com/spelcaster/dcw.hugocarmo.membershiphistory/issues</url>
     <url desc="Licensing">http://opensource.org/licenses/MIT</url>
   </urls>
   <releaseDate>2017-07-20</releaseDate>
