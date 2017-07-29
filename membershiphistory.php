@@ -1,6 +1,7 @@
 <?php
 
 require_once 'membershiphistory.civix.php';
+require_once 'membershiphistory.hooks.php';
 
 /**
  * Implements hook_civicrm_config().
