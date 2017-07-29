@@ -4,7 +4,6 @@
 --   civicrm_membership_payment;
 -- > members with lifetime membership doesn't have an end_date;
 
-
 -- Create Table dcw_hugocarmo_membershiphistory
 CREATE TABLE dcw_hugocarmo_membershiphistory (
     id int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -27,10 +26,10 @@ INSERT INTO dcw_hugocarmo_membershiphistory (
     fk_contribution_id,
     start_date,
     end_date)
-SELECT civicrm_membership.id,
-    civicrm_membership_payment.contribution_id ,
-    civicrm_membership.start_date,
-    civicrm_membership.end_date
-FROM civicrm_membership
-LEFT JOIN civicrm_membership_payment
-ON civicrm_membership.id = civicrm_membership_payment.membership_id;
+SELECT m.id,
+    p.contribution_id ,
+    m.start_date,
+    m.end_date
+FROM civicrm_membership m
+LEFT JOIN civicrm_membership_payment p
+ON m.id = p.membership_id;
