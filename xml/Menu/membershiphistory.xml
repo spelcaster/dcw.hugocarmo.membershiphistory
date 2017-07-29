@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<menu>
+  <item>
+    <path>civicrm/membership-history/ajax/get-membership-history</path>
+    <page_callback>CRM_Membershiphistory_Page_AJAX::getMembershipHistory</page_callback>
+    <page_type>0</page_type>
+    <access_arguments>access CiviCRM</access_arguments>
+    <component>Membershiphistory</component>
+  </item>
+</menu>
