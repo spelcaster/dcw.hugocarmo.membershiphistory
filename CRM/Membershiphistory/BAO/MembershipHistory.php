@@ -31,19 +31,18 @@ EOF;
     ];
 
     $dao = CRM_Core_DAO::executeQuery($sql, $resolve);
-    $dao->fetch();
 
-    if ($dao->id) {
+    if ($dao->fetch()) {
         $params['start_date'] = $dao->end_date;
     }
 
-    CRM_Utils_Hook::pre($action, $entityName, CRM_Utils_Array::value('id', $params), $params);
+    CRM_Utils_Hook::pre('create', $entityName, CRM_Utils_Array::value('id', $params), $params);
 
     $instance = new $className();
     $instance->copyValues($params);
     $instance->save();
 
-    CRM_Utils_Hook::post($action, $entityName, $instance->id, $instance);
+    CRM_Utils_Hook::post('create', $entityName, $instance->id, $instance);
 
     return $instance;
   }
