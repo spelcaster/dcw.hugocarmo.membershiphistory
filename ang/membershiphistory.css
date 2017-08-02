@@ -1,1 +1,19 @@
 /* Add any CSS rules for Angular module "membershiphistory" */
+.membership-history-expired {
+    background-color: #D0D6E5;
+}
+
+.membership-history-valid {
+    background-color: #DBFFAF;
+}
+
+.membership-history-lifetime {
+    background-color: #BDEBFF;
+}
+
+.membership-history-status {
+    display: block;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+}
