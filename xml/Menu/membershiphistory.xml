@@ -7,4 +7,10 @@
     <access_arguments>access CiviCRM</access_arguments>
     <component>Membershiphistory</component>
   </item>
+  <item>
+    <path>civicrm/membership-history/view</path>
+    <page_callback>CRM_Membershiphistory_Page_View</page_callback>
+    <title>View</title>
+    <access_arguments>access CiviCRM</access_arguments>
+  </item>
 </menu>

@@ -77,6 +77,7 @@ function civicrm_api3_membership_history_get($params) {
  * @throws API_Exception
  */
 function civicrm_api3_membership_history_getlist($params) {
+    $resolve = [];
     $sql = <<<EOF
 SELECT a.display_name as display_name,
     m.id as membership_id,
@@ -93,7 +94,26 @@ ON m.id = h.fk_membership_id
 JOIN civicrm_contribution c
 ON c.id = h.fk_contribution_id
 WHERE a.is_deleted = 0
+
 EOF;
+
+    $resolveId = 1;
+    if (isset($params['cid'])) {
+        $resolve[$resolveId] = [$params['cid'], "Integer"];
+        $sql .= "\n AND a.id = %${resolveId}\n";
+        $resolveId++;
+    }
+
+    if (isset($params['membership_id'])) {
+        $resolve[$resolveId] = [$params['membership_id'], "Integer"];
+        $sql .= "\n AND m.id = %${resolveId}\n";
+        $resolveId++;
+    }
+
+    $sql .= <<<EOF
+ORDER BY m.id, h.id
+EOF;
+
     $dao = CRM_Core_DAO::executeQuery($sql, $resolve);
 
     $props = [
@@ -105,16 +125,14 @@ EOF;
         'membership_id',
         'contribution_id'
     ];
+
     $result = [];
-
+    $i = 0;
     while ($dao->fetch()) {
-        if (!$dao->id) {
-            break;
-        }
-
         foreach ($props as $prop) {
-            $result[$dao->id][$prop] = $dao->$prop;
+            $result[$i][$prop] = $dao->$prop;
         }
+        $i++;
     }
 
     return civicrm_api3_create_success(

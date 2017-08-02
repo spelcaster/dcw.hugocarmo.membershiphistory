@@ -31,5 +31,15 @@ function membershiphistory_civicrm_post($action, $objectName, $objectId, &$objec
 }
 
 function membershiphistory_civicrm_tabs (&$tabs, $contactId) {
-    // add membershipperiod tab
+  $result = civicrm_api3(
+    'MembershipHistory', 'getlist', ['cid' => $contactId]
+  );
+
+  $tabs[] = [
+    'title' => 'Membership History',
+    'id' => 'membership-history',
+    'url' => "/civicrm/membership-history/view?cid=${contactId}",
+    'weight' => 100,
+    'count' => $result['count']
+  ];
 }
