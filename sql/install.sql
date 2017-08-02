@@ -16,8 +16,12 @@ CREATE TABLE dcw_hugocarmo_membershiphistory (
     INDEX (fk_membership_id),
     INDEX (fk_contribution_id),
 
-    FOREIGN KEY (fk_membership_id) REFERENCES civicrm_membership(id),
-    FOREIGN KEY (fk_contribution_id) REFERENCES civicrm_contribution(id)
+    FOREIGN KEY (fk_membership_id)
+        REFERENCES civicrm_membership(id)
+        ON DELETE CASCADE,
+    FOREIGN KEY (fk_contribution_id)
+        REFERENCES civicrm_contribution(id)
+        ON DELETE CASCADE
 ) ENGINE=INNODB;
 
 -- Populate the dcw_hugocarmo_membershiphistory with existing data
