@@ -93,6 +93,7 @@ ON m.id = h.fk_membership_id
 JOIN civicrm_contribution c
 ON c.id = h.fk_contribution_id
 WHERE a.is_deleted = 0
+ORDER BY m.id, h.id
 EOF;
     $dao = CRM_Core_DAO::executeQuery($sql, $resolve);
 
@@ -105,16 +106,14 @@ EOF;
         'membership_id',
         'contribution_id'
     ];
+
     $result = [];
-
+    $i = 0;
     while ($dao->fetch()) {
-        if (!$dao->id) {
-            break;
-        }
-
         foreach ($props as $prop) {
-            $result[$dao->id][$prop] = $dao->$prop;
+            $result[$i][$prop] = $dao->$prop;
         }
+        $i++;
     }
 
     return civicrm_api3_create_success(
