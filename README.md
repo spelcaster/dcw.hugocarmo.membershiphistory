@@ -1,3 +1,14 @@
+# [Routes]
+
+## Server-side Rendering
+
+- Contact View (/civicrm/contact/view?cid=:cid:);
+- Membership History View (/civicrm/membership-history/view?cid=:cid:);
+
+## Client-side Rendering
+
+- Angular Module (/civicrm/a/#/dcw/membership-history);
+
 # [HOOKS](https://wiki.civicrm.org/confluence/display/CRMDOC42/Hook+Reference)
 
 ## Important hooks
@@ -22,8 +33,8 @@
 
 - [x] Create a new membership history entity
 - [x] Database schema install
-- [ ] Create an API for the new membership history entity
-- [ ] Use CiviCRM hooks to insert/update the membership history entries
-- [ ] Display membership history in contact page
+- [x] Create an API for the new membership history entity
+- [x] Use CiviCRM hooks to insert/update the membership history entries
+- [x] Display membership history in contact page
 - [ ] Write unit tests for PHP classes
 - [ ] Write unit tests for angular controller
